@@ -3,7 +3,7 @@ import datetime
 
 import total as total
 
-from questions import Add, Multiply
+from questions import Add, Multiply, Subtract, Divide
 
 
 class Quiz:
@@ -11,9 +11,9 @@ class Quiz:
     answers = []
 
     def __init__(self):
-        question_types = (Add, Multiply)
+        question_types = (Add, Multiply, Subtract, Divide)
         # generate 10 random questions from number 1 to 20
-        for _ in range(10):
+        for _ in range(5):
             num1 = random.randint(1, 20)
             num2 = random.randint(1, 20)
             question = random.choice(question_types)(num1, num2)
