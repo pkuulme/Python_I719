@@ -1,8 +1,6 @@
 import random
 import datetime
 
-import total as total
-
 from questions import Add, Multiply, Subtract, Divide
 
 
