@@ -54,4 +54,7 @@ class Quiz():
 
         print("It took you {} seconds".format((self.end_time - self.start_time).seconds))
 
-Quiz().take_quiz()
+    @staticmethod
+    def start_quiz():
+        quiz = Quiz()
+        quiz.take_quiz()
