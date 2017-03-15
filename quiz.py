@@ -5,15 +5,18 @@ from questions import Add, Multiply, Subtract, Divide
 
 
 class Quiz():
-    questions = []
-    answers = []
+    
 
     def __init__(self):
+        self.questions = []
+        self.answers = []
         question_types = (Add, Subtract, Multiply)
         # generate 10 random questions from number 1 to 20
         for _ in range(5):
             num1 = random.randint(1, 5)
             num2 = random.randint(1, 5)
+
+           
 
             question = random.choice(question_types)(num1, num2)
             # add these questions to self.questions
