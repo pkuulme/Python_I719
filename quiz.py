@@ -6,16 +6,17 @@ import total as total
 from questions import Add, Multiply, Subtract, Divide
 
 
-class Quiz:
+class Quiz():
     questions = []
     answers = []
 
     def __init__(self):
-        question_types = (Add, Multiply, Subtract, Divide)
+        question_types = (Add, Subtract, Multiply)
         # generate 10 random questions from number 1 to 20
         for _ in range(5):
-            num1 = random.randint(1, 20)
-            num2 = random.randint(1, 20)
+            num1 = random.randint(1, 5)
+            num2 = random.randint(1, 5)
+
             question = random.choice(question_types)(num1, num2)
             # add these questions to self.questions
             self.questions.append(question)
@@ -28,6 +29,7 @@ class Quiz:
         else:
             self.end_time = datetime.datetime.now()
         return self.summary()
+
 
     def ask(self, question):
         correct = False
@@ -53,6 +55,5 @@ class Quiz:
              self.total_correct(), len(self.questions)))
 
         print("It took you {} seconds".format((self.end_time - self.start_time).seconds))
-
 
 Quiz().take_quiz()
